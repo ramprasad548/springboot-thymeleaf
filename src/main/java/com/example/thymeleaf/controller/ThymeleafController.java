@@ -30,6 +30,20 @@ public class ThymeleafController {
 	        
 	        model.addAttribute("contacts", listContact);       
 	         
-	        return "contact";
+	        return "contact.html";
+	        }
+	@RequestMapping(value = "/list_contactJSP")
+	public String userJspInfo(Model model) throws Exception {
+
+		 List<Contact> listContact = new ArrayList<>();
+         
+	        listContact.add(new Contact("Marry John", "marry.john@gmail.com", "USA"));
+	        listContact.add(new Contact("Tom Smith", "tomsmith@outlook.com", "England"));
+	        listContact.add(new Contact("John Purcell", "john123@yahoo.com", "Australia"));
+	        listContact.add(new Contact("Siva Krishna", "sivakrishna@gmail.com", "India"));
+	        
+	        model.addAttribute("contacts", listContact);       
+	         
+	        return "myfirst.jsp";
 	        }
 }
